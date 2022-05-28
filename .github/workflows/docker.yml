@@ -6,7 +6,7 @@ on:
     - cron: "25 0 * * 2"
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   docker:
