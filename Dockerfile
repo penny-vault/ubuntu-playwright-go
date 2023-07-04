@@ -1,6 +1,6 @@
 FROM golang AS builder
 WORKDIR /go/src
-RUN go install github.com/playwright-community/playwright-go/cmd/playwright@2586b38
+RUN go install github.com/playwright-community/playwright-go/cmd/playwright@latest
 FROM ubuntu
 
 ARG BUILD_DATE
