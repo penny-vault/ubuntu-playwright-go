@@ -1,7 +1,7 @@
 FROM golang AS builder
 WORKDIR /go/src
 RUN go install github.com/playwright-community/playwright-go/cmd/playwright@latest
-FROM ubuntu
+FROM ubuntu:22.04
 
 ARG BUILD_DATE
 ARG VCS_REF
