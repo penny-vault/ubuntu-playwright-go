@@ -17,49 +17,40 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
 
 COPY --from=builder /go/bin/playwright /usr/bin
 RUN apt-get update \
-    && apt-get install -y ca-certificates \
-        fonts-freefont-ttf \
-        fonts-kacst \
-        fonts-thai-tlwg \
-        fonts-wqy-zenhei \
-        libasound2 \
-        libatk-bridge2.0-0 \
-        libatk1.0-0 \
-        libatspi2.0-0 \
-        libc6 \
+    && apt-get update&& apt-get install -y --no-install-recommends ca-certificates \
+        libasound2t64 \
+        libatk-bridge2.0-0t64 \
+        libatk1.0-0t64 \
+        libatspi2.0-0t64 \
         libcairo2 \
-        libcups2 \
+        libcups2t64 \
         libdbus-1-3 \
         libdrm2 \
-        libexpat1 \
         libgbm1 \
-        libgconf-2-4 \
-        libgdk-pixbuf2.0-0 \
-        libglib2.0-0 \
-        libgtk-3-0 \
-        libfontconfig1 \
+        libglib2.0-0t64 \
         libnspr4 \
         libnss3 \
         libpango-1.0-0 \
-        libstdc++6 \
         libx11-6 \
-        libx11-xcb1 \
         libxcb1 \
         libxcomposite1 \
-        libxcursor1 \
         libxdamage1 \
         libxext6 \
         libxfixes3 \
-        libxi6 \
         libxkbcommon0 \
         libxrandr2 \
-        libxrender1 \
-        libxss1 \
-        libxtst6 \
-        procps \
-        tzdata \
         xvfb \
-        --no-install-recommends \
+        fonts-noto-color-emoji \
+        fonts-unifont \
+        libfontconfig1 \
+        libfreetype6 \
+        xfonts-cyrillic \
+        xfonts-scalable \
+        fonts-liberation \
+        fonts-ipafont-gothic \
+        fonts-wqy-zenhei \
+        fonts-tlwg-loma-otf \
+        fonts-freefont-ttf \
     && apt-get clean -y \
     && mkdir -p /tmp/.X11-unix \
     && chmod 1777 /tmp/.X11-unix
