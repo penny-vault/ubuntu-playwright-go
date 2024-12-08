@@ -55,11 +55,9 @@ RUN apt-get update \
     && mkdir -p /tmp/.X11-unix \
     && chmod 1777 /tmp/.X11-unix
 
-# Add non-root user
-RUN useradd -ms /bin/bash playwright
 # Run as non-privileged
-USER playwright
-WORKDIR /home/playwright
+USER ubuntu
+WORKDIR /home/ubuntu
 
-COPY --from=builder /go/bin/playwright /home/playwright
-RUN /home/playwright/playwright install chromium && rm /home/playwright/playwright
+COPY --from=builder /go/bin/playwright /home/ubuntu
+RUN /home/ubuntu/playwright install chromium && rm /home/ubuntu/playwright
