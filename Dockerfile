@@ -39,6 +39,7 @@ RUN apt-get update \
         libxfixes3 \
         libxkbcommon0 \
         libxrandr2 \
+        tzdata \
         xvfb \
         fonts-noto-color-emoji \
         fonts-unifont \
