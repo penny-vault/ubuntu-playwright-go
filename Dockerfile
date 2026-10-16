@@ -1,7 +1,7 @@
 FROM golang AS builder
 WORKDIR /go/src
-RUN go install github.com/playwright-community/playwright-go/cmd/playwright@latest
-FROM ubuntu:24.04
+RUN go install github.com/mxschmitt/playwright-go/cmd/playwright@latest
+FROM ubuntu:26.04
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
 
 COPY --from=builder /go/bin/playwright /usr/bin
 RUN apt-get update \
-    && apt-get update&& apt-get install -y --no-install-recommends ca-certificates \
+    && apt-get install -y --no-install-recommends ca-certificates \
         libasound2t64 \
         libatk-bridge2.0-0t64 \
         libatk1.0-0t64 \

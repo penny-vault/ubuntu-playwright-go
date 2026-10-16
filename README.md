@@ -8,8 +8,8 @@ Published as [`pennyvault/playwright-go`](https://hub.docker.com/r/pennyvault/pl
 
 ## What's inside
 
-- Ubuntu 24.04 (`t64` packages — Ubuntu's 64-bit time_t transition)
-- `playwright` CLI from `playwright-community/playwright-go`
+- Ubuntu 26.04 (`t64` packages — Ubuntu's 64-bit time_t transition)
+- `playwright` CLI from `mxschmitt/playwright-go` (formerly `playwright-community/playwright-go`)
 - Chromium (installed via `playwright install`)
 - Headful-friendly extras: `xvfb`, font packages, `ca-certificates`, `tzdata`
 - A non-privileged `ubuntu` user (uid 1000) with `$HOME=/home/ubuntu`
